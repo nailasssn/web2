@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
 // use illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,3 +50,4 @@ Route::get('/pasien/create', [PasienController::class, 'create'])->name('pasien.
 
 Route::get('/pasien/store', [PasienController::class, 'store'])->name('pasien.store');
 
+Route::get('/admin', [AdminController::class, 'index']);
