@@ -25,9 +25,18 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="../../index3.html" class="nav-link">Home</a>
       </li>
+      @auth
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ route('profile.edit') }}" class="nav-link">Profile</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+          {{ csrf_field() }}
+        </form>
+      </li>  
+      @endauth
+
     </ul>
 
     <!-- Right navbar links -->
